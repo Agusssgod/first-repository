@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Adivina el Número</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    
+    <div class="sidebar">
+        <h2>My Websites</h2>
+        <a href="calculator.html">Calculator</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="Guess the number.html">Guess the Number</a>
+        <a href="To-do.html">To Do</a>
+    </div>   
+    <div class="contenido">
+    <h1>Guess the number</h1>
+    <div class="tarjeta"> <!-- Usamos tu clase tarjeta -->
+        <p>I'm thinking a number between 1 and 100...</p>
+
+        <input type="number" id="guess" placeholder="Your number here">
+
+        <br>
+
+        <button class="boton" onclick="checkGuess()">Guess</button>
+
+        <p id="message"></p>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script>
+        const cantidadFlores = 20; // Puedes cambiar este número si quieres más o menos flores
+    
+        for (let i = 0; i < cantidadFlores; i++) {
+            let flor = document.createElement('div');
+            flor.classList.add('flor');
+            flor.style.left = Math.random() * 100 + "vw";
+            flor.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            flor.style.fontSize = (Math.random() * 24 + 12) + "px";
+            flor.innerHTML = "🌸"; // Acá podés cambiar el emoji si querés (💖, 🌺, 💮)
+            document.body.appendChild(flor);
+        }
+    </script>
+        <div class="footer">
+            <h1>made in 27/04/25 :3</h1>
+        </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+    </div>
+</body>
+</html>

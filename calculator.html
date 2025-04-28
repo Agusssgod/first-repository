@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css.css">
+        <meta name="google" content="notranslate">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>title</title>
+    </head>
+    <body>
+        
+        <div class="sidebar">
+            <h2>My Websites</h2>
+            <a href="calculator.html">Calculator</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="Guess the number.html">Guess the Number</a>
+            <a href="To-do.html">To Do</a>
+        </div>   
+        <div class="contenido">
+        <center>
+            <h1 class="rainbow">
+                calculator 
+            </h1>
+        </center>
+        <div class="rainbow-line"></div>
+        <center>
+        <br>
+            <div class="calculator">
+                <input type="text" id="display" disabled>
+                <br>
+                <button onclick="appendNumber('1')">1</button>
+                <button onclick="appendNumber('2')">2</button>
+                <button onclick="appendNumber('3')">3</button>
+                <button onclick="appendOperator('+')">+</button>
+                <br>
+                <button onclick="appendNumber('4')">4</button>
+                <button onclick="appendNumber('5')">5</button>
+                <button onclick="appendNumber('6')">6</button>
+                <button onclick="appendOperator('-')">-</button>
+                <br>
+                <button onclick="appendNumber('7')">7</button>
+                <button onclick="appendNumber('8')">8</button>
+                <button onclick="appendNumber('9')">9</button>
+                <button onclick="appendOperator('*')">x</button>
+                <br>
+                <button onclick="clearDisplay()">Clear</button>
+                <button onclick="appendNumber('0')">0 </button>
+                <button onclick="calculate()">=</button>
+                <button onclick="appendOperator('/')">/</button>
+            </div>       
+            <script>
+                function appendNumber(number) {
+                    document.getElementById('display').value += number;
+                }
+        
+                function appendOperator(operator) {
+                    document.getElementById('display').value += operator;
+                }
+        
+                function clearDisplay() {
+                    document.getElementById('display').value = '';
+                }
+        
+                function calculate() {
+                    let display = document.getElementById('display');
+                    console.log(display)
+                    display.value = eval(display.value);
+                } 
+            </script>
+        </center>
+        <div class="footer">
+            <h1>made in 27/04/25 :3</h1>
+        </div>
+        <script>
+            const cantidadFlores = 20; // Puedes cambiar este número si quieres más o menos flores
+            
+            for (let i = 0; i < cantidadFlores; i++) {
+                let flor = document.createElement('div');
+                flor.classList.add('flor');
+                flor.style.left = Math.random() * 100 + "vw";
+                flor.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                flor.style.fontSize = (Math.random() * 24 + 12) + "px";
+                flor.innerHTML = "🌸"; // Acá podés cambiar el emoji si querés (💖, 🌺, 💮)
+                document.body.appendChild(flor);
+            }
+        </script>
+        
+        <br>
+        <br>
+        <br>
+    </body>
+
+
+        </div>
+</html>

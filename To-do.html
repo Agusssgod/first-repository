@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My To-Do List</title>
+    <link rel="stylesheet" href="css.css"> <!-- Usa tu CSS rosa y negro -->
+</head>
+<body>
+    <div class="sidebar">
+        <h2>My Websites</h2>
+    <a href="calculator.html">Calculator</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="Guess the number.html">Guess the Number</a>
+    <a href="To-do.html">To Do</a>
+</div>
+
+<div style="margin-left: 220px; padding: 20px;">
+    <h1>🌸 My To-Do List 🌸</h1>
+
+    <input type="text" id="taskInput" placeholder="Write a new task..." class="input-task">
+    <button onclick="addTask()" class="boton">Add Task</button>
+
+    <ul id="taskList"></ul>
+</div>
+
+<script src="todo.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css.css">
+    <title>Calendar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: black; /* Fondo negro */
+            color: pink; /* Letras rosadas */
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 60%;
+            background-color: pink; /* Fondo de la tabla rosita */
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            height: 50px;
+            width: 50px;
+            color: black; /* Letras negras dentro de la tabla */
+            font-weight: bold;
+        }
+        th {
+            background-color: #ff69b4; /* Rosa más fuerte para encabezados */
+            color: black;
+        }
+        .hoy {
+            background-color: #ff1493; /* Rosa fuerte para hoy */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="sidebar">
+        <h2>My Websites</h2>
+        <a href="calculator.html">Calculator</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="Guess the number.html">Guess the Number</a>
+        <a href="To-do.html">To Do</a>
+    </div>
+    <div class="contenido">  
+        <h1>Calendar </h1>
+        <h1 id="titulo"></h1>
+        <table id="calendario">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody id="dias">
+                <!-- Los días se llenan solos -->
+            </tbody>
+        </table>
+
+        <script>
+            // Crear el calendario
+            const hoy = new Date();
+            const año = hoy.getFullYear();
+            const mes = hoy.getMonth();
+
+            const meses = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+
+            document.getElementById("titulo").textContent = `${meses[mes]} ${año}`;
+
+            const primerDia = new Date(año, mes, 1).getDay();
+            const ultimoDia = new Date(año, mes + 1, 0).getDate();
+
+            const tablaDias = document.getElementById("dias");
+
+            let fila = document.createElement("tr");
+
+            for (let i = 0; i < primerDia; i++) {
+                fila.appendChild(document.createElement("td"));
+            }
+
+            for (let dia = 1; dia <= ultimoDia; dia++) {
+                const celda = document.createElement("td");
+                celda.textContent = dia;
+
+                if (dia === hoy.getDate()) {
+                    celda.classList.add("hoy");
+                }
+
+                fila.appendChild(celda);
+
+                if ((primerDia + dia) % 7 === 0) {
+                    tablaDias.appendChild(fila);
+                    fila = document.createElement("tr");
+                }
+            }
+            
+            tablaDias.appendChild(fila);
+            </script>
+    <script>
+        const cantidadFlores = 20; // Puedes cambiar este número si quieres más o menos flores
+        
+        for (let i = 0; i < cantidadFlores; i++) {
+            let flor = document.createElement('div');
+            flor.classList.add('flor');
+            flor.style.left = Math.random() * 100 + "vw";
+            flor.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            flor.style.fontSize = (Math.random() * 24 + 12) + "px";
+            flor.innerHTML = "🌸"; // Acá podés cambiar el emoji si querés (💖, 🌺, 💮)
+            document.body.appendChild(flor);
+        }
+        </script>
+
+
+    <div class="footer">
+        <h1>made in 27/04/25 :3</h1>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
+</body>
+</html>
